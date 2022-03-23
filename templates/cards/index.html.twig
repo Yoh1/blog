@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CardsController!{% endblock %}
+
+{% block body %}
+
+		<div class="container">
+			<h1 class="text-center" >{{ cartes.title }}</h1>
+			<img class="rounded mx-auto d-block" src="{% if  cartes.images == 'http://via.placeholder.com/640x360' %}
+					
+							{{ cartes.images}}
+							{% else %}
+						  {{ asset('uploads/cards/' ~ cartes.images ) }}
+					{% endif %}" />
+			
+			
+			<p class="text-center">{{ cartes.description }}</p>
+		</div>
+            		{# <div class="card d- flex  " style="width: 18rem;">
+					<img src={{ cartes.images }} class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">{{ cartes.title }}</h5>
+						<p class="card-text">{{ cartes.description }}</p>
+					</div>
+				</div> #}
+
+
+
+{% endblock %}
